@@ -6,11 +6,11 @@
                 </div>
                 <nav id="easy-menu">
                     <ul class="menu-list">
-                        <li><a href="/">Home </a></li>
-                        <li><a href="/News-and-updates">News & Updates <i class="fa fa-angle-down"></i></a>
+                        <li class="active"><a href="/">Home </a></li>
+                        <li><a href="/news-and-updates">News & Updates <i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown">
-                                <li><a href="/News-and-updates/internationl">Interntional</a></li>
-                                <li><a href="/News-and-updates/africa">Africa</a></li>
+                                <li><a href="/news-and-updates/internationl">Interntional</a></li>
+                                <li><a href="/news-and-updates/africa">Africa</a></li>
                             </ul>
                         </li>
                         <li><a href="/what-we-do">What we do</a></li>

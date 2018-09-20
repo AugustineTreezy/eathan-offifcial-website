@@ -1,13 +1,5 @@
 /*------------------------------------------------------------------
-	Template Name:	The Fund
-    Template URI:
-    Description ::
-    Author:
-    Author URI:
-    License:
-    License URI:
-    Version: 1.0
-    */
+	
 /*
     ========================================================================
     Index
@@ -1057,6 +1049,9 @@ hr {
   }
   .menu-area .menu-list > li a {
     padding: 16px 0;
+  }
+  .menu-list .active{
+    color: #0aaaa0;
   }
   #easy-menu ul ul {
     border: 0;

@@ -29,6 +29,8 @@
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
     <!-- Modernizr-->
     <script src="{{asset('js/modernizr-2.8.3.min.js')}}"></script>
+
+    @yield('styles')
 </head>
 
 <body>

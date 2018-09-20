@@ -515,69 +515,26 @@
                 </div>
             </div>
             <div class="row row-eq-rs-height">
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <div class="blog-post wow fadeInUpSmd" data-wow-duration="1.5s" data-wow-delay=".2s">
-                        <div class="blog-post__thumbnail-wrap">
-                            <img src="images/blog/blog-1.jpg" alt="blog">
-                            <div class="blog-post__like-comment">
-                                <span><i class="fa fa-comments"></i>22 Comment</span>
-                                <span>|</span>
-                                <span><i class="fa fa-thumbs-up"></i>105 Likes</span>
+                @foreach ($news as $item)
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="blog-post wow fadeInUpSmd" data-wow-duration="1.5s" data-wow-delay=".2s">
+                            <div class="blog-post__thumbnail-wrap">
+                            <img src="{{$item->forced_image_url}}" alt="blog">
+                                <div class="blog-post__like-comment">
+                                    <span><i class="fa fa-comments"></i><a style="text-decoration: none; color:#fff" href="{{ url('/news-and-updates/') }}/{{$item->slug}}#disqus_thread">0 Comments</a></span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="blog-post__text-content">
-                            <h4 class="blog-post__title heading-label-four"><a href="#">EDUCATION FOR CHILDREN</a></h4>
-                            <div class="blog-post__meta-info">
-                                <span class="small-text"><i class="fa fa-user base-color"></i>Admin</span>
-                                <span class="small-text"><i class="fa fa-calendar base-color"></i>25 January</span>
+                            <div class="blog-post__text-content">
+                            <h4 class="blog-post__title heading-label-four"><a href="{{ url('/news-and-updates/') }}/{{$item->slug}}">{{$item->title}}</a></h4>
+                                <div class="blog-post__meta-info">
+                                <span class="small-text"><i class="fa fa-calendar base-color"></i>{{date("M j, Y", strtotime($item->created_at))}}</span>
+                                </div>
+                                <p>{{ str_limit(strip_tags($item->body), $limit = 150, $end = '...') }}</p>
+                                <a href="{{ url('/news-and-updates/') }}/{{$item->slug}}" class="btn">Read More</a>
                             </div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adip it scing elit, sed do eiusmod tempor incididu duut ut labore et dolore </p>
-                            <a href="#" class="btn">Read More</a>
-                        </div>
-                    </div><!--/.blog-post-->
-                </div>
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <div class="blog-post wow fadeInUpSmd" data-wow-duration="1.5s" data-wow-delay=".4s">
-                        <div class="blog-post__thumbnail-wrap">
-                            <img src="images/blog/blog-2.jpg" alt="blog">
-                            <div class="blog-post__like-comment">
-                                <span><i class="fa fa-comments"></i>22 Comment</span>
-                                <span>|</span>
-                                <span><i class="fa fa-thumbs-up"></i>105 Likes</span>
-                            </div>
-                        </div>
-                        <div class="blog-post__text-content">
-                            <h4 class="blog-post__title heading-label-four"><a href="#">EDUCATION FOR CHILDREN</a></h4>
-                            <div class="blog-post__meta-info">
-                                <span class="small-text"><i class="fa fa-user base-color"></i>Admin</span>
-                                <span class="small-text"><i class="fa fa-calendar base-color"></i>25 January</span>
-                            </div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adip it scing elit, sed do eiusmod tempor incididu duut ut labore et dolore </p>
-                            <a href="#" class="btn">Read More</a>
-                        </div>
-                    </div><!--/.blog-post-->
-                </div>
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <div class="blog-post wow fadeInUpSmd" data-wow-duration="1.5s" data-wow-delay=".4s">
-                        <div class="blog-post__thumbnail-wrap">
-                            <img src="images/blog/blog-1.jpg" alt="blog">
-                            <div class="blog-post__like-comment">
-                                <span><i class="fa fa-comments"></i>22 Comment</span>
-                                <span>|</span>
-                                <span><i class="fa fa-thumbs-up"></i>105 Likes</span>
-                            </div>
-                        </div>
-                        <div class="blog-post__text-content">
-                            <h4 class="blog-post__title heading-label-four"><a href="#">EDUCATION FOR CHILDREN</a></h4>
-                            <div class="blog-post__meta-info">
-                                <span class="small-text"><i class="fa fa-user base-color"></i>Admin</span>
-                                <span class="small-text"><i class="fa fa-calendar base-color"></i>25 January</span>
-                            </div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adip it scing elit, sed do eiusmod tempor incididu duut ut labore et dolore </p>
-                            <a href="#" class="btn">Read More</a>
-                        </div>
-                    </div><!--/.blog-post-->
-                </div>
+                        </div><!--/.blog-post-->
+                    </div>
+                @endforeach
             </div>
         </div>
     </section>
@@ -601,6 +558,7 @@
 @endsection
 
 @section('scripts')
+    <script id="dsq-count-scr" src="//eathan.disqus.com/count.js" async></script>
     <!-- == Wow js == -->
     <script src="{{asset('js/wow.min.js')}}"></script>
     <!-- == Revolution Slider JS == -->

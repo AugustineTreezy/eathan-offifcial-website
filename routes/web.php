@@ -15,4 +15,5 @@ Route::get('/', 'PagesController@index');
 Route::get('/contact', 'PagesController@contact');
 Route::get('/about-us', 'PagesController@about');
 Route::get('/news-and-updates', 'PagesController@news_n_updates');
+Route::get('/news-and-updates/{slug}', 'PagesController@news_n_updates_details');
 Route::get('/events', 'PagesController@events_details');

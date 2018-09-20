@@ -35,22 +35,21 @@
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="input-group">
-                                <input type="text" name="name" placeholder="Name" class="input-group__input form-control" />
+                                <input type="text" name="name" placeholder="Name" class="input-group__input form-control" required/>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="input-group">
-                                <input type="email" name="email" placeholder="email" class="input-group__input form-control" />
+                                <input type="email" name="email" placeholder="email" class="input-group__input form-control" required/>
                             </div>
                         </div>
                     </div>
                     <div class="input-group">
-                        <input type="text"  name="subject"  placeholder="Subject" class="input-group__input form-control" />
+                        <input type="text"  name="subject"  placeholder="Subject" class="input-group__input form-control" required/>
                     </div>
                     <div class="input-group">
                         <textarea  name="message"  class="input-group__textarea form-control" placeholder="Message" rows="8" cols="80"></textarea>
                     </div>
-                    <input type="hidden" name="recipient_email" value="contact@iglyphic.com" />
                     <input type="submit" class="btn base-bg" value="Submit">
                     <span class="text-mute pdl15">* All fields are mandatory</span>
                 </form>
@@ -66,24 +65,15 @@
                         <span class="icon-wrap"><i class="fa fa-phone contact-icon"></i></span>
                         <div class="text-content">
                             <div class="base-color contact-title">Contact Number</div>
-                            +1 2689254 - +1 2685987
+                            +2547154554 - +1 2685987
                         </div>
                     </div><!--/.contact-address-item-->
                     <div class="contact-address-item">
                         <span class="icon-wrap"><i class="fa fa-envelope contact-icon"></i></span>
                         <div class="text-content">
                             <div class="base-color contact-title">Contact Mail</div>
-                            support@thefund.com<br/>
-                            help@thefund.com
-                        </div>
-                    </div><!--/.contact-address-item-->
-
-                    <div class="contact-address-item">
-                        <span class="icon-wrap"><i class="fa fa-map-marker contact-icon"></i></span>
-                        <div class="text-content">
-                            <div class="base-color contact-title">Website</div>
-                            www.thefund.com<br/>
-                            www.Support.thefund.com
+                            support@eathan.org<br/>
+                            info@eathan.org
                         </div>
                     </div><!--/.contact-address-item-->
                 </div>

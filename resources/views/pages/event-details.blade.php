@@ -176,13 +176,13 @@
 
 @section('scripts')
     <!-- == Counter == -->
-    <script src="js/jquery.waypoints.min.js"></script>
-    <script src="js/jquery.counterup.min.js"></script>
+    <script src="{{ asset('js/jquery.waypoints.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.counterup.min.js') }}"></script>
     <!-- == Countdown == -->
-    <script src="js/jquery.plugin.js"></script>
-    <script src="js/jquery.countdown.min.js"></script>
+    <script src="{{ asset('js/jquery.plugin.js') }}"></script>
+    <script src="{{ asset('js/jquery.countdown.min.js') }}"></script>
     <!-- == Google Maps == -->
     <script src="https://maps.googleapis.com/maps/api/js?libraries=places&amp;key=AIzaSyBO5Else2rW4UNyXiCMp3y20JV7BseTMys"></script>
-    <script src="js/jquery.mapit.min.js"></script>
-    <script src="js/map-init.js"></script>
+    <script src="{{ asset('js/jquery.mapit.min.js') }}"></script>
+    <script src="{{ asset('js/map-init.js') }}"></script>
 @endsection
