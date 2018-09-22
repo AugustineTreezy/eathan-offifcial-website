@@ -51,9 +51,9 @@
                 <div class="row">
                     <div class="col-sm-6 col-xs-6 text-xs-center">
                         <div class="top-bar__contact">
-                            <i class="fa fa-envelope"></i> <span class="pdl5">info@eathan.com</span>
+                            <i class="fa fa-envelope"></i> <span class="pdl5">info@eathan.org</span>
                             <span class="pdl15 pdr15">|</span>
-                            <i class="fa fa-phone-square"></i> <span class="pdl5">+880 1234 2547 89</span>
+                            <i class="fa fa-phone-square"></i> <span class="pdl5">+254 734 2547 89</span>
                         </div>
                     </div>
                     <div class="col-sm-6 col-xs-6 text-right text-xs-center">

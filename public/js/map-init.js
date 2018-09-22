@@ -4,12 +4,14 @@
             function init() {
                 // Basic options for a simple Google Map
                 // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
+                var latitude = $('#latitude').val();
+                var longitude = $('#longitude').val();
                 var mapOptions = {
                     // How zoomed in you want the map to start at (always required)
                     zoom: 14,
 
                     // The latitude and longitude to center the map (always required)
-                    center: new google.maps.LatLng(-1.2680358, 36.8011), // New York
+                    center: new google.maps.LatLng(latitude, longitude), // New York
 
                     // How you would like to style the map.
                     // This is where you would paste any style found on Snazzy Maps.
@@ -25,7 +27,7 @@
 
                 // Let's also add a marker while we're at it
                 var marker = new google.maps.Marker({
-                    position: new google.maps.LatLng(-1.2680358, 36.8011),
+                    position: new google.maps.LatLng(latitude, longitude),
                     map: map,
                     title: 'Snazzy!'
                 });

@@ -303,74 +303,25 @@
                         <div class="section-heading-separator section-heading-separator--left-align wow fadeInUpXsd" data-wow-duration=".9s" data-wow-delay=".1s"></div>
                     </div>
                     <div class="upcommig-event-carousel wow fadeInUpXsd" data-wow-duration=".7s" data-wow-delay=".3s">
+                        @foreach ($events as $event)
                         <div class="upcomming-event">
                             <div class="upcomming-event__image-wrap">
-                                <img src="images/home/event-1.jpg" class="upcomming-event__image" alt="event">
+                                <img src="{{$event->forced_image_url}}" class="upcomming-event__image" alt="event">
                                 <div class="upcomming-event__date">
                                     <i class="fa fa-calendar"></i>
-                                    <span>21 jan</span>
+                                    <span>{{date("j M", strtotime($event->created_at))}}</span>
                                 </div>
                             </div>
                             <div class="upcomming-event__text-content">
-                                <h4 class="upcomming-event__title"><a href="#">EDUCATION NEEDED</a></h4>
+                                <h4 class="upcomming-event__title"><a href="{{ route('event-details', ['slug'=>$event->slug]) }}">{{ str_limit($event->title, $limit = 40, $end = '...') }}</a></h4>
                                 <div class="upcomming-event__meta-info">
-                                    <span class="upcomming-event__time"><i class="fa fa-clock-o base-color"></i>9.00 AM - 11.00 PM  </span>
-                                    <span class="upcomming-event__place"><i class="fa fa-map-marker base-color"></i>29 Newyork City</span>
+                                    <span class="upcomming-event__time"><i class="fa fa-clock-o base-color"></i>{{date("g:i a", strtotime($event->starting))}} - {{date("g:i a", strtotime($event->stoping))}}  </span>
+                                    <span class="upcomming-event__place"><i class="fa fa-map-marker base-color"></i>{{ str_limit($event->address, $limit = 35, $end = '...') }}</span>
                                 </div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitatio</p>
+                                <p>{{ str_limit(strip_tags($event->description), $limit = 150, $end = '...') }}</p>
                             </div>
-                        </div><!--/.upcomming-event-->
-                        <div class="upcomming-event">
-                            <div class="upcomming-event__image-wrap">
-                                <img src="images/home/event-1.jpg" class="upcomming-event__image" alt="event">
-                                <div class="upcomming-event__date">
-                                    <i class="fa fa-calendar"></i>
-                                    <span>21 jan</span>
-                                </div>
-                            </div>
-                            <div class="upcomming-event__text-content">
-                                <h4 class="upcomming-event__title"><a href="#">EDUCATION NEEDED</a></h4>
-                                <div class="upcomming-event__meta-info">
-                                    <span class="upcomming-event__time"><i class="fa fa-clock-o base-color"></i>9.00 AM - 11.00 PM  </span>
-                                    <span class="upcomming-event__place"><i class="fa fa-map-marker base-color"></i>29 Newyork City</span>
-                                </div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitatio</p>
-                            </div>
-                        </div><!--/.upcomming-event-->
-                        <div class="upcomming-event">
-                            <div class="upcomming-event__image-wrap">
-                                <img src="images/home/event-1.jpg" class="upcomming-event__image" alt="event">
-                                <div class="upcomming-event__date">
-                                    <i class="fa fa-calendar"></i>
-                                    <span>21 jan</span>
-                                </div>
-                            </div>
-                            <div class="upcomming-event__text-content">
-                                <h4 class="upcomming-event__title"><a href="#">EDUCATION NEEDED</a></h4>
-                                <div class="upcomming-event__meta-info">
-                                    <span class="upcomming-event__time"><i class="fa fa-clock-o base-color"></i>9.00 AM - 11.00 PM  </span>
-                                    <span class="upcomming-event__place"><i class="fa fa-map-marker base-color"></i>29 Newyork City</span>
-                                </div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitatio</p>
-                            </div>
-                        </div><!--/.upcomming-event-->
-                        <div class="upcomming-event">
-                            <div class="upcomming-event__image-wrap">
-                                <img src="images/home/event-1.jpg" class="upcomming-event__image" alt="event">
-                                <div class="upcomming-event__date">
-                                    <i class="fa fa-calendar"></i>
-                                    <span>21 jan</span>
-                                </div>
-                            </div>
-                            <div class="upcomming-event__text-content">
-                                <h4 class="upcomming-event__title"><a href="#">EDUCATION NEEDED</a></h4>
-                                <div class="upcomming-event__meta-info">
-                                    <span class="upcomming-event__time"><i class="fa fa-clock-o base-color"></i>9.00 AM - 11.00 PM  </span>
-                                    <span class="upcomming-event__place"><i class="fa fa-map-marker base-color"></i>29 Newyork City</span>
-                                </div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitatio</p>
-                            </div>
-                        </div><!--/.upcomming-event-->
+                        </div><!--/.upcomming-event-->                            
+                        @endforeach
                     </div>
                 </div>
                 <div class="col-md-5">

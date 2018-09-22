@@ -4,6 +4,10 @@
     @include('layouts.inc.pages-nav')    
 @endsection
 
+@section('styles')
+    
+@endsection
+
 @section('content')
     <div class="banner-area banner-area--events all-text-white text-center">
         <div class="container">
@@ -24,28 +28,37 @@
                 <div class="col-md-8">
                     <div class="event-detial-wrap">
                         <div class="image-wrap mb40">
-                            <img src="images/events/event-details.jpg" class="img-round" alt="">
+                            <img src="{{$event->ratio_image_url}}" class="img-round" alt="">
                         </div>
-                        <h3 class="pdb10">GET VOLUNTEER IDEA FESTIVAL 2018</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                        <h3 class="pdb10">{{$event->title}}</h3>
                         <ul class="event-detail-meta nv-color">
                             <li>
                                 <span class="event-detail-meta__title"><i class="fa fa-calendar base-color icon"></i> Event Schedule</span>
-                                <span class="desc">Feb 11, 2018 08:00 AM to Jun 25, 2018 12:00 PM</span>
+                                <span class="desc">{{date("M j, Y g:i A", strtotime($event->starting))}} to Jun 25, 2018 12:00 PM </span>
                             </li>
                             <li>
                                 <span class="event-detail-meta__title"><i class="fa fa-map-marker base-color icon"></i> Location</span>
-                                <span class="desc">South Africa</span>
+                                <span class="desc">{{$event->address}}</span>
                             </li>
                             <li>
                                 <span class="event-detail-meta__title"><i class="fa fa-ticket base-color icon"></i> Price</span>
                                 <span class="desc">From <span class="base-color">$80</span> </span>
                             </li>
+                            <li>
                         </ul>
+                        <!-- Button code -->
+                        <div title="Add to Calendar" class="addeventatc">
+                            Add to Calendar
+                            <span class="start">{{date("m/d/Y g:i A", strtotime($event->starting))}}</span>
+                            <span class="end">{{date("m/d/Y g:i A", strtotime($event->stoping))}}</span>
+                            <span class="timezone">America/Los_Angeles</span>
+                            <span class="title">{{$event->title}}</span>
+                            <span class="description">{{ str_limit(strip_tags($event->description), $limit = 250, $end = '...') }} {{'\nFor more info about the event view it on our website on the link below.\n'}} {{ route('event-details', ['slug'=>$event->slug]) }}</span>
+                            <span class="location">{{$event->address}}</span>
+                        </div>
                     </div>
                     <div class="mt50 mb30">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                        <p>{!! $event->description !!}</p>
                     </div>
                     <div class="event-details-location-wrap mt40 pdt50">
                         <div class="row">
@@ -102,69 +115,22 @@
                         </div>
                         <div class="widget">
                             <div class="widget__heading">
-                                <h4 class="widget__title">LATEST <span class="base-color">CAUSES</span></h4>
+                                <h4 class="widget__title">LATEST <span class="base-color">NEWS</span></h4>
                             </div>
                             <div class="widget__text-content">
+                                @foreach ($news as $item)
                                 <div class="widget-latest-causes">
                                     <div class="widget-latest-causes__image-wrap">
-                                        <a href="#"><img class="widget-latest-causes__thubnail" src="images/sidebar/latest-causes1.jpg" alt=""></a>
+                                        <a href="{{ url('/news-and-updates/') }}/{{$item->slug}}"><img class="widget-latest-causes__thubnail" style="border-radius: 5px;" src="{{$item->forced_image_url}}" alt=""></a>
                                     </div>
                                     <div class="widget-latest-causes__text-content">
-                                        <h4 class="widget-latest-causes__title"><a href="#">Cause Title Gose here</a></h4>
-                                        <div class="widget-latest-causes__admin small-text">
-                                            <i class="base-color fa fa-user widget-latest-causes__admin-icon"></i>
-                                            by <a href="#">Admin</a>
-                                        </div>
+                                        <h4 class="widget-latest-causes__title"><a href="{{ url('/news-and-updates/') }}/{{$item->slug}}">{{ str_limit($item->title, $limit = 35, $end = '...') }}</a></h4>
                                         <div class="widget-latest-causes__time text-mute">
                                             10 Minutes Ago
                                         </div>
                                     </div>
-                                </div><!--/.widget-latest-causes-->
-                                <div class="widget-latest-causes">
-                                    <div class="widget-latest-causes__image-wrap">
-                                        <a href="#"><img class="widget-latest-causes__thubnail" src="images/sidebar/latest-causes2.jpg" alt=""></a>
-                                    </div>
-                                    <div class="widget-latest-causes__text-content">
-                                        <h4 class="widget-latest-causes__title"><a href="#">Cause Title Gose here</a></h4>
-                                        <div class="widget-latest-causes__admin small-text">
-                                            <i class="base-color fa fa-user widget-latest-causes__admin-icon"></i>
-                                            by <a href="#">Admin</a>
-                                        </div>
-                                        <div class="widget-latest-causes__time text-mute">
-                                            10 Minutes Ago
-                                        </div>
-                                    </div>
-                                </div><!--/.widget-latest-causes-->
-                                <div class="widget-latest-causes">
-                                    <div class="widget-latest-causes__image-wrap">
-                                        <a href="#"><img class="widget-latest-causes__thubnail" src="images/sidebar/latest-causes3.jpg" alt=""></a>
-                                    </div>
-                                    <div class="widget-latest-causes__text-content">
-                                        <h4 class="widget-latest-causes__title"><a href="#">Cause Title Gose here</a></h4>
-                                        <div class="widget-latest-causes__admin small-text">
-                                            <i class="base-color fa fa-user widget-latest-causes__admin-icon"></i>
-                                            by <a href="#">Admin</a>
-                                        </div>
-                                        <div class="widget-latest-causes__time text-mute">
-                                            10 Minutes Ago
-                                        </div>
-                                    </div>
-                                </div><!--/.widget-latest-causes-->
-                                <div class="widget-latest-causes">
-                                    <div class="widget-latest-causes__image-wrap">
-                                        <a href="#"><img class="widget-latest-causes__thubnail" src="images/sidebar/latest-causes4.jpg" alt=""></a>
-                                    </div>
-                                    <div class="widget-latest-causes__text-content">
-                                        <h4 class="widget-latest-causes__title"><a href="#">Cause Title Gose here</a></h4>
-                                        <div class="widget-latest-causes__admin small-text">
-                                            <i class="base-color fa fa-user widget-latest-causes__admin-icon"></i>
-                                            by <a href="#">Admin</a>
-                                        </div>
-                                        <div class="widget-latest-causes__time text-mute">
-                                            10 Minutes Ago
-                                        </div>
-                                    </div>
-                                </div><!--/.widget-latest-causes-->
+                                </div><!--/.widget-more-news-->    
+                                @endforeach                                
                             </div>
                         </div>
                     </aside>
@@ -172,6 +138,8 @@
             </div>
         </div>
     </div>
+    <input type="hidden" value="{{$event->latitude}}" id="latitude">
+    <input type="hidden" value="{{$event->longitude}}" id="longitude">
 @endsection
 
 @section('scripts')
@@ -181,6 +149,7 @@
     <!-- == Countdown == -->
     <script src="{{ asset('js/jquery.plugin.js') }}"></script>
     <script src="{{ asset('js/jquery.countdown.min.js') }}"></script>
+    <script type="text/javascript" src="https://addevent.com/libs/atc/1.6.1/atc.min.js" async defer></script>
     <!-- == Google Maps == -->
     <script src="https://maps.googleapis.com/maps/api/js?libraries=places&amp;key=AIzaSyBO5Else2rW4UNyXiCMp3y20JV7BseTMys"></script>
     <script src="{{ asset('js/jquery.mapit.min.js') }}"></script>

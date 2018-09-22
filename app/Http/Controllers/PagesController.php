@@ -10,7 +10,13 @@ class PagesController extends Controller
     public function index(){
         $news = Newz::orderBy('created_at','asc')->take(3)->get();
         $events = Event::orderBy('created_at','asc')->take(3)->get();
-        return view('pages.index')->with('news',$news);
+
+        $data = array(
+            'news'=>$news,
+            'events'=>$events
+        );
+
+        return view('pages.index')->with($data);
     }
 
     public function contact(){
@@ -42,8 +48,19 @@ class PagesController extends Controller
         return view('pages.news-n-updates-details')->with($data);
     }
 
-    public function events_details(){
-        return view('pages.event-details');
+    public function events_details($slug){
+        $event = Event::where('slug',$slug)->first();
+
+        //fetch the more events on side of the page
+        $events = Event::where('slug', '!=' , $slug)->orderBy('created_at','asc')->take(4)->get();
+        //fetch latest news on side of the page
+        $news = Newz::orderBy('created_at','asc')->take(4)->get();
+        $data = array(
+            'event'=>$event,
+            'events'=>$events,
+            'news'=>$news
+        );
+        return view('pages.event-details')->with($data);
     }
     
 }
