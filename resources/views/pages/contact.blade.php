@@ -11,8 +11,8 @@
                 <div class="col-md-12">
                     <h1 class="page-title">CONTACT US</h1>
                     <ul class="fund-breadcumb">
-                        <li><a href="index.html">Home</a> </li>
-                        <li><a href="contact-us.html">Contact Us</a> </li>
+                        <li><a href="{{ route('home') }}">Home</a> </li>
+                        <li><a href="{{ route('contact') }}">Contact Us</a> </li>
                     </ul>
                 </div>
             </div>
@@ -28,10 +28,9 @@
                 <div class="section-heading-separator"></div>
             </div>
         </div>
-        <div id="mapContainer"></div>
         <div class="container no-padding">
             <div class="main-contact">
-                <form class="contact-form" id="contact">
+                <form class="contact-form">
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="input-group">
@@ -53,30 +52,6 @@
                     <input type="submit" class="btn base-bg" value="Submit">
                     <span class="text-mute pdl15">* All fields are mandatory</span>
                 </form>
-                <div class="contact-address">
-                    <div class="contact-address-item">
-                        <span class="icon-wrap"><i class="fa fa-map-marker contact-icon"></i></span>
-                        <div class="text-content">
-                            <div class="base-color contact-title">Office Location</div>
-                            2050 Bamako Place Washington, DC 20521-2050
-                        </div>
-                    </div><!--/.contact-address-item-->
-                    <div class="contact-address-item">
-                        <span class="icon-wrap"><i class="fa fa-phone contact-icon"></i></span>
-                        <div class="text-content">
-                            <div class="base-color contact-title">Contact Number</div>
-                            +2547154554 - +1 2685987
-                        </div>
-                    </div><!--/.contact-address-item-->
-                    <div class="contact-address-item">
-                        <span class="icon-wrap"><i class="fa fa-envelope contact-icon"></i></span>
-                        <div class="text-content">
-                            <div class="base-color contact-title">Contact Mail</div>
-                            support@eathan.org<br/>
-                            info@eathan.org
-                        </div>
-                    </div><!--/.contact-address-item-->
-                </div>
             </div>
         </div>
     </section>
@@ -85,6 +60,6 @@
 @section('scripts')
     <!-- == Google Maps == -->
     <script src="https://maps.googleapis.com/maps/api/js?libraries=places&amp;key=AIzaSyBO5Else2rW4UNyXiCMp3y20JV7BseTMys"></script>
-    <script src="js/jquery.mapit.min.js"></script>
-    <script src="js/map-init.js"></script>
+    <script src="{{ asset('js/jquery.mapit.min.js') }}"></script>
+    <script src="{{ asset('js/map-init.js') }}"></script>
 @endsection

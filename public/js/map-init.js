@@ -29,6 +29,7 @@
                 var marker = new google.maps.Marker({
                     position: new google.maps.LatLng(latitude, longitude),
                     map: map,
-                    title: 'Snazzy!'
+                    title: 'Event Location'
                 });
+                
             }

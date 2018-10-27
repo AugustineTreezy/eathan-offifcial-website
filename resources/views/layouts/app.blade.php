@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- ================= Favicon ================== -->
-    <link rel="icon" sizes="72x72" href="{{asset('images/favicon-96x96.png')}}">
+    <link rel="icon" sizes="72x72" href="{{asset('images/favicon.ico')}}">
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900%7COpen+Sans:300,400,600,700,800" rel="stylesheet">
     <!-- Font Awesome css-->
@@ -27,6 +27,8 @@
     <link rel="stylesheet" href="{{asset('css/animate.css')}}">
     <!-- Style-->
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    <!-- Color-->
+    <link rel="stylesheet" href="{{asset('css/color.css')}}">
     <!-- Modernizr-->
     <script src="{{asset('js/modernizr-2.8.3.min.js')}}"></script>
 
@@ -52,8 +54,6 @@
                     <div class="col-sm-6 col-xs-6 text-xs-center">
                         <div class="top-bar__contact">
                             <i class="fa fa-envelope"></i> <span class="pdl5">info@eathan.org</span>
-                            <span class="pdl15 pdr15">|</span>
-                            <i class="fa fa-phone-square"></i> <span class="pdl5">+254 734 2547 89</span>
                         </div>
                     </div>
                     <div class="col-sm-6 col-xs-6 text-right text-xs-center">
@@ -72,29 +72,12 @@
             </div>
         </div>
     </header>
-    <nav class="mobile-background-nav">
-        <div class="mobile-inner">
-            <span class="mobile-menu-close"><i class="icon-icomooon-close"></i></span>
-            <ul class="menu-accordion">
-                <li><a href="/">Home </a></li>
-                <li><a href="/news-and-updates" class="has-submenu">News & Updates<i class="fa fa-angle-down"></i></a>
-                    <ul class="dropdown">
-                        <li><a href="/News-and-updates/internationl">Interntional</a></li>
-                        <li><a href="/News-and-updates/africa">Africa</a></li>
-                    </ul>
-                </li>
-                <li><a href="/what-we-do">What we do</a></li>
-                <li><a href="/downloads">Downloads</a></li>
-                <li><a href="/about-us">About Us</a></li>
-                <li><a href="/contact">Contact</a></li>
-           </ul>
-        </div>
-    </nav>
+    
     @yield('nav') 
     @yield('content')
 
     <footer class="fund-footer">
-        <div class="main-footer all-text-white section-padding">
+        {{-- <div class="main-footer all-text-white section-padding">
             <div class="container">
                 <div class="row row-eq-rs-height">
                     <div class="col-md-4 col-sm-6 col-xs-12">
@@ -161,21 +144,21 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         <div class="copyright-area all-text-white pdt25 pdb25">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 col-sm-6">
                         <div class="copyright-text text-xs-center">
-                            Copyright &copy; 2018. All Rights Reserved.
+                           Copyright &copy; {{date("Y")}} Eathan.
                         </div>
                     </div>
                     <div class="col-md-6 col-sm-6">
                         <ul class="footer-menu text-xs-center">
-                            <li><a href="/about-us">About</a></li>
-                            <li><a href="#">Terms & Conditions</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="/contact">Contact</a></li>
+                                <li><a href="{{ route('news-home') }}">News</a></li>
+                            <li><a href="{{ route('about') }}">About</a></li>
+                            <li><a href="{{ route('what-we-do') }}">What we do</a></li>
+                            <li><a href="{{ route('contact') }}">Contact</a></li>
                         </ul>
                     </div>
                 </div>

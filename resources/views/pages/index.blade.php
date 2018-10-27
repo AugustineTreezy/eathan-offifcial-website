@@ -2,33 +2,7 @@
 
 @section('nav')
    <div class="slider-area">
-        <div class="main-menu-area main-menu-area--absolute">
-            <div class="container">
-                <div class="menu-logo">
-                    <div class="logo">
-                        <a href="/" class="logo-index"><img src="images/logo.png" alt="" /></a>
-                    </div>
-                    <nav id="easy-menu">
-                        <ul class="menu-list">
-                            <li><a href="/">Home </a></li>
-                            <li><a href="/news-and-updates">News & Updates <i class="fa fa-angle-down"></i></a>
-                                <ul class="dropdown">
-                                    <li><a href="/News-and-updates/internationl">Interntional</a></li>
-                                    <li><a href="/News-and-updates/africa">Africa</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="/what-we-do">What we do</a></li>
-                            <li><a href="/downloads">Downloads</a></li>
-                            <li><a href="/about-us">About Us</a></li>
-                            <li><a href="/contact">Contact</a></li>
-                       </ul>
-                   </nav>
-                   <div class="donate-button-wrap">
-                        <a href="#" class="hidden-lg hidden-md" id="humbarger-icon"><i class="fa fa-bars"></i> </a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        @include('layouts.inc.pages-nav')   
         <div data-scroll-index="0" id="rev_slider_1052_1_wrapper" class="all-text-white rev_slider_wrapper fullscreen-container" data-alias="web-product-dark122" data-source="gallery">
            <!-- START REVOLUTION SLIDER 5.3.0.2 fullscreen mode -->
                <div id="rev_slider_1052_1" class="rev_slider fullscreenbanner" style="display:none;" data-version="5.3.0.2">
@@ -56,7 +30,7 @@
                        data-paddingright="[0,0,0,0]"
                        data-paddingbottom="[0,0,0,0]"
                        data-paddingleft="[0,0,0,0]"
-                       ><span class="slider-title">Every Children Has <br/>Equal Right</span></div>
+                       ><span class="slider-title">YOU ARE NOT <br/>ALONE</span></div>
                    <!-- LAYER NR. 2 -->
                    <div class="tp-caption tp-resizeme slider-sub-heading-wrap"
                        id="slide-2946-layer-10"
@@ -126,7 +100,7 @@
                        data-paddingright="[0,0,0,0]"
                        data-paddingbottom="[0,0,0,0]"
                        data-paddingleft="[0,0,0,0]"
-                       ><span class="slider-title">Every Children Has <br/>Equal Right</span></div>
+                       ><span class="slider-title">YOU ARE NOT <br/>ALONE</span></div>
                    <!-- LAYER NR. 2 -->
                    <div class="tp-caption tp-resizeme slider-sub-heading-wrap"
                        id="slide-2947-layer-10"
@@ -231,8 +205,8 @@
                 </div>                
             </div>
             <center>              
-                    <a href="/about-us" class="btn">Read More</a>
-                </center>
+                <a href="/about-us" class="btn">More About Us</a>
+            </center>
         </div>
     </section>
     <section class="section-padding feature-section">
@@ -246,6 +220,24 @@
                 </div>
             </div>
             <div class="row row-eq-rs-height">
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="feature-item wow fadeInUpSmd" data-wow-duration="1.5s" data-wow-delay=".2s">
+                        <div class="feature-item__icon-wrap">
+                            <i class="feature-item__icon fa fa-sun-o"></i>
+                        </div>
+                        <h4 class="feature-item__title heading-label-four">REGIONAL ITGNC ADVOCACY</h4>
+                        <p>To advocate for and create awareness on ITGNC issues, in collaboration with our members and focussing primarily on regional and continental platforms </p>
+                    </div><!--/.feature-item-->
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="feature-item wow fadeInUpSmd" data-wow-duration="1.5s" data-wow-delay=".4s">
+                        <div class="feature-item__icon-wrap">
+                            <i class="feature-item__icon fa fa-gift"></i>
+                        </div>
+                        <h4 class="feature-item__title heading-label-four">REGIONAL MOVEMENT BUILDINGS</h4>
+                        <p>To strengthen, mobilise and empower trans* diverse persons and organisations across the region towards growing a strong and responsive regional movement </p>
+                    </div><!--/.feature-item-->
+                </div>
                 <div class="col-md-4 col-sm-6 col-xs-12">
                     <div class="feature-item wow fadeInUpSmd" data-wow-duration="1.5s" data-wow-delay=".2s">
                         <div class="feature-item__icon-wrap">
@@ -273,24 +265,6 @@
                         <p>To advocate for the availability of and access to health services and meaningful HIV programming for ITGNC persons in East Africa </p>
                     </div><!--/.feature-item-->
                 </div>
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <div class="feature-item wow fadeInUpSmd" data-wow-duration="1.5s" data-wow-delay=".2s">
-                        <div class="feature-item__icon-wrap">
-                            <i class="feature-item__icon fa fa-sun-o"></i>
-                        </div>
-                        <h4 class="feature-item__title heading-label-four">REGIONAL ITGNC ADVOCACY</h4>
-                        <p>To advocate for and create awareness on ITGNC issues, in collaboration with our members and focussing primarily on regional and continental platforms </p>
-                    </div><!--/.feature-item-->
-                </div>
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <div class="feature-item wow fadeInUpSmd" data-wow-duration="1.5s" data-wow-delay=".4s">
-                        <div class="feature-item__icon-wrap">
-                            <i class="feature-item__icon fa fa-gift"></i>
-                        </div>
-                        <h4 class="feature-item__title heading-label-four">REGIONAL MOVEMENT BUILDINGS</h4>
-                        <p>To strengthen, mobilise and empower trans* diverse persons and organisations across the region towards growing a strong and responsive regional movement </p>
-                    </div><!--/.feature-item-->
-                </div>
             </div>
         </div>
     </section>
@@ -305,13 +279,15 @@
                     <div class="upcommig-event-carousel wow fadeInUpXsd" data-wow-duration=".7s" data-wow-delay=".3s">
                         @foreach ($events as $event)
                         <div class="upcomming-event">
-                            <div class="upcomming-event__image-wrap">
-                                <img src="{{$event->forced_image_url}}" class="upcomming-event__image" alt="event">
-                                <div class="upcomming-event__date">
-                                    <i class="fa fa-calendar"></i>
-                                    <span>{{date("j M", strtotime($event->created_at))}}</span>
+                            <a href="{{ route('event-details', ['slug'=>$event->slug]) }}">
+                                <div class="upcomming-event__image-wrap">
+                                    <img src="{{ url('http://eathanadmin.site/storage/events-images/').$event->image_name}}" height="145" class="upcomming-event__image" alt="event">
+                                    <div class="upcomming-event__date">
+                                        <i class="fa fa-calendar"></i>
+                                        <span>{{date("j M", strtotime($event->created_at))}}</span>
+                                    </div>
                                 </div>
-                            </div>
+                            </a>                            
                             <div class="upcomming-event__text-content">
                                 <h4 class="upcomming-event__title"><a href="{{ route('event-details', ['slug'=>$event->slug]) }}">{{ str_limit($event->title, $limit = 40, $end = '...') }}</a></h4>
                                 <div class="upcomming-event__meta-info">
@@ -326,129 +302,12 @@
                 </div>
                 <div class="col-md-5">
                     <div class="section-heading">
-                        <h2 class="section-title wow fadeInUpXsd" data-wow-duration=".7s" data-wow-delay=".1s">MAKE A <span class="base-color">DONATION</span></h2>
+                        <h2 class="section-title wow fadeInUpXsd" data-wow-duration=".7s" data-wow-delay=".1s">WE ARE <span class="base-color">SOCIAL</span></h2>
                         <div class="section-heading-separator section-heading-separator--left-align wow fadeInUpXsd" data-wow-duration=".9s" data-wow-delay=".1s"></div>
                     </div>
                     <div class="donation-wrap wow fadeInUpXsd" data-wow-duration=".7s" data-wow-delay=".3s">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et </p>
-                        <form class="donation-form">
-                            <div class="input-group">
-                                <label class="input-group__label">I Want To Donate For</label>
-                                <select class="input-group__select hide-search--dropdown">
-                                    <option value="0">Donate All</option>
-                                    <option value="1">Build Water Well Closer to the People</option>
-                                    <option value="2">Build Main Road That</option>
-                                    <option value="3">Build a Village For Homeless</option>
-                                    <option value="4">Build a College and University</option>
-                                </select>
-                            </div>
-                            <div class="input-group">
-                                <label class="input-group__label">Currency</label>
-                                <select class="selectpicker input-group__select">
-                                    <option value="USD" selected="selected">United States Dollars</option>
-                                	<option value="EUR">Euro</option>
-                                	<option value="GBP">United Kingdom Pounds</option>
-                                	<option value="DZD">Algeria Dinars</option>
-                                	<option value="ARP">Argentina Pesos</option>
-                                	<option value="AUD">Australia Dollars</option>
-                                	<option value="ATS">Austria Schillings</option>
-                                	<option value="BSD">Bahamas Dollars</option>
-                                	<option value="BBD">Barbados Dollars</option>
-                                	<option value="BEF">Belgium Francs</option>
-                                	<option value="BMD">Bermuda Dollars</option>
-                                	<option value="BRR">Brazil Real</option>
-                                	<option value="BGL">Bulgaria Lev</option>
-                                	<option value="CAD">Canada Dollars</option>
-                                	<option value="CLP">Chile Pesos</option>
-                                	<option value="CNY">China Yuan Renmimbi</option>
-                                	<option value="CYP">Cyprus Pounds</option>
-                                	<option value="CSK">Czech Republic Koruna</option>
-                                	<option value="DKK">Denmark Kroner</option>
-                                	<option value="NLG">Dutch Guilders</option>
-                                	<option value="XCD">Eastern Caribbean Dollars</option>
-                                	<option value="EGP">Egypt Pounds</option>
-                                	<option value="FJD">Fiji Dollars</option>
-                                	<option value="FIM">Finland Markka</option>
-                                	<option value="FRF">France Francs</option>
-                                	<option value="DEM">Germany Deutsche Marks</option>
-                                	<option value="XAU">Gold Ounces</option>
-                                	<option value="GRD">Greece Drachmas</option>
-                                	<option value="HKD">Hong Kong Dollars</option>
-                                	<option value="HUF">Hungary Forint</option>
-                                	<option value="ISK">Iceland Krona</option>
-                                	<option value="INR">India Rupees</option>
-                                	<option value="IDR">Indonesia Rupiah</option>
-                                	<option value="IEP">Ireland Punt</option>
-                                	<option value="ILS">Israel New Shekels</option>
-                                	<option value="ITL">Italy Lira</option>
-                                	<option value="JMD">Jamaica Dollars</option>
-                                	<option value="JPY">Japan Yen</option>
-                                	<option value="JOD">Jordan Dinar</option>
-                                	<option value="KRW">Korea (South) Won</option>
-                                	<option value="LBP">Lebanon Pounds</option>
-                                	<option value="LUF">Luxembourg Francs</option>
-                                	<option value="MYR">Malaysia Ringgit</option>
-                                	<option value="MXP">Mexico Pesos</option>
-                                	<option value="NLG">Netherlands Guilders</option>
-                                	<option value="NZD">New Zealand Dollars</option>
-                                	<option value="NOK">Norway Kroner</option>
-                                	<option value="PKR">Pakistan Rupees</option>
-                                	<option value="XPD">Palladium Ounces</option>
-                                	<option value="PHP">Philippines Pesos</option>
-                                	<option value="XPT">Platinum Ounces</option>
-                                	<option value="PLZ">Poland Zloty</option>
-                                	<option value="PTE">Portugal Escudo</option>
-                                	<option value="ROL">Romania Leu</option>
-                                	<option value="RUR">Russia Rubles</option>
-                                	<option value="SAR">Saudi Arabia Riyal</option>
-                                	<option value="XAG">Silver Ounces</option>
-                                	<option value="SGD">Singapore Dollars</option>
-                                	<option value="SKK">Slovakia Koruna</option>
-                                	<option value="ZAR">South Africa Rand</option>
-                                	<option value="KRW">South Korea Won</option>
-                                	<option value="ESP">Spain Pesetas</option>
-                                	<option value="XDR">Special Drawing Right (IMF)</option>
-                                	<option value="SDD">Sudan Dinar</option>
-                                	<option value="SEK">Sweden Krona</option>
-                                	<option value="CHF">Switzerland Francs</option>
-                                	<option value="TWD">Taiwan Dollars</option>
-                                	<option value="THB">Thailand Baht</option>
-                                	<option value="TTD">Trinidad and Tobago Dollars</option>
-                                	<option value="TRL">Turkey Lira</option>
-                                	<option value="VEB">Venezuela Bolivar</option>
-                                	<option value="ZMK">Zambia Kwacha</option>
-                                	<option value="EUR">Euro</option>
-                                	<option value="XCD">Eastern Caribbean Dollars</option>
-                                	<option value="XDR">Special Drawing Right (IMF)</option>
-                                	<option value="XAG">Silver Ounces</option>
-                                	<option value="XAU">Gold Ounces</option>
-                                	<option value="XPD">Palladium Ounces</option>
-                                	<option value="XPT">Platinum Ounces</option>
-                                </select>
-                            </div>
-                            <div class="input-group">
-                                <label class="input-group__label">How Much Do You Wanr To Donate?</label>
-                                <select class="pament-select input-group__select">
-                                    <option value="1">$50</option>
-                                    <option value="2">$100</option>
-                                    <option value="3">$200</option>
-                                    <option value="4">$500</option>
-                                    <option value="5">$1000</option>
-                                    <option value="6">$5000</option>
-                                    <option value="7">$10000</option>
-                                </select>
-                            </div>
-                            <div class="input-group">
-                                <label class="input-group__label">Payment Type</label>
-                                <div class="input-group__radio-wrap">
-                                    <input type="radio" id="one-time" name="payment-type" value="1">
-                                    <label for="one-time">One Time</label>
-                                    <input type="radio" id="recurring" name="payment-type" value="2">
-                                    <label for="recurring">Recurring</label>
-                                </div>
-                            </div>
-                            <input type="submit" value="Donet Now" class="btn"/>
-                        </form>
+                        <p id="fb-error"></p>
+                        <div class="fb-page" data-href="https://www.facebook.com/eastafricatrans/" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/eastafricatrans/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/eastafricatrans/">EATHAN - East Africa Trans Health &amp; Advocacy Network</a></blockquote></div>
                     </div>
                 </div>
             </div>
@@ -470,18 +329,18 @@
                     <div class="col-md-4 col-sm-6 col-xs-12">
                         <div class="blog-post wow fadeInUpSmd" data-wow-duration="1.5s" data-wow-delay=".2s">
                             <div class="blog-post__thumbnail-wrap">
-                            <img src="{{$item->forced_image_url}}" alt="blog">
+                            <img src="{{ url('http://eathanadmin.site/storage/news-images/').'/'.$item->image_name}}" height="240" alt="blog">
                                 <div class="blog-post__like-comment">
-                                    <span><i class="fa fa-comments"></i><a style="text-decoration: none; color:#fff" href="{{ url('/news-and-updates/') }}/{{$item->slug}}#disqus_thread">0 Comments</a></span>
+                                    <span><i class="fa fa-comments"></i><a style="text-decoration: none; color:#fff" href="{{ route('news-details', ['slug'=>$item->slug]) }}#disqus_thread">0 Comments</a></span>
                                 </div>
                             </div>
                             <div class="blog-post__text-content">
-                            <h4 class="blog-post__title heading-label-four"><a href="{{ url('/news-and-updates/') }}/{{$item->slug}}">{{$item->title}}</a></h4>
+                            <h4 class="blog-post__title heading-label-four"><a href="{{ route('news-details', ['slug'=>$item->slug]) }}">{{ str_limit(strip_tags($item->title), $limit = 80, $end = '...') }}</a></h4>
                                 <div class="blog-post__meta-info">
                                 <span class="small-text"><i class="fa fa-calendar base-color"></i>{{date("M j, Y", strtotime($item->created_at))}}</span>
                                 </div>
-                                <p>{{ str_limit(strip_tags($item->body), $limit = 150, $end = '...') }}</p>
-                                <a href="{{ url('/news-and-updates/') }}/{{$item->slug}}" class="btn">Read More</a>
+                                <p>{{ str_limit(strip_tags($item->body), $limit = 160, $end = '...') }}</p>
+                                <a href="{{ route('news-details', ['slug'=>$item->slug]) }}" class="btn">Read More</a>
                             </div>
                         </div><!--/.blog-post-->
                     </div>
@@ -509,6 +368,29 @@
 @endsection
 
 @section('scripts')
+<div id="fb-root"></div>
+    <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.1&appId=2132071700377039&autoLogAppEvents=1';
+    fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+    window.fbLoaded = false;
+
+    setTimeout(function() {
+        if (!fbLoaded) {
+            $('#fb-error').text('Please consider disabling adblocker on this page to view our social media stream. We do not show any ads.');
+            console.log("Its blocked!");
+        }
+    }, 20 * 1000);
+
+    window.fbAsyncInit = function() {
+        window.fbLoaded = true;
+        console.log("Its not blocked");
+        $('#fb-error').hide();
+    }
+    </script>
     <script id="dsq-count-scr" src="//eathan.disqus.com/count.js" async></script>
     <!-- == Wow js == -->
     <script src="{{asset('js/wow.min.js')}}"></script>

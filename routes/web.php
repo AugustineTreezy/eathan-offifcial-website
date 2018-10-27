@@ -11,9 +11,15 @@
 |
 */
 
-Route::get('/', 'PagesController@index');
-Route::get('/contact', 'PagesController@contact');
-Route::get('/about-us', 'PagesController@about');
-Route::get('/news-and-updates', 'PagesController@news_n_updates');
-Route::get('/news-and-updates/{slug}', 'PagesController@news_n_updates_details');
-Route::get('/events/{slug}', 'PagesController@events_details')->name('event-details');
+Route::get('/', 'PagesController@index')->name('home');
+Route::get('what-we-do', 'PagesController@what_we_do')->name('what-we-do');
+Route::get('contact', 'PagesController@contact')->name('contact');
+Route::get('about-us', 'PagesController@about')->name('about');
+Route::group(['prefix' => 'news-and-updates'], function () {
+    Route::get('/', 'PagesController@news_n_updates')->name('news-home');
+    Route::get('{slug}', 'PagesController@news_n_updates_details')->name('news-details');
+    Route::get('category/{category}', 'PagesController@news_n_updates_category')->name('news-category');
+    Route::get('tagged/{tag}', 'PagesController@news_n_updates_tags')->name('news-tags');  
+});
+
+Route::get('events/{slug}', 'PagesController@events_details')->name('event-details');
